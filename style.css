@@ -1,0 +1,298 @@
+
+/* ==========================================
+   VINYLSTORE - ESTILO GERAL
+   ========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #171717;
+    color: #f5ebdd;
+    line-height: 1.5;
+}
+
+h1 {
+    color: #e9a441;
+    font-size: 36px;
+    margin: 0 0 25px;
+}
+
+h2 {
+    color: #f5ebdd;
+    font-size: 26px;
+    margin: 30px 0 20px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #444;
+    margin: 25px 0;
+}
+
+/* ==========================================
+   LINKS
+   ========================================== */
+
+a {
+    color: #e9a441;
+    text-decoration: none;
+    margin-right: 12px;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+/* ==========================================
+   FORMULÁRIOS
+   ========================================== */
+
+form {
+    background-color: #262626;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+form p {
+    margin: 0 0 18px;
+}
+
+label {
+    display: inline-block;
+    font-weight: bold;
+    color: #f5ebdd;
+}
+
+input {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #555;
+    border-radius: 6px;
+    background-color: #171717;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #e9a441;
+}
+
+input[type="file"] {
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+    background-color: #e9a441;
+    color: #171717;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 12px;
+}
+
+/* ==========================================
+   BOTÕES
+   ========================================== */
+
+button {
+    display: inline-block;
+    background-color: #e9a441;
+    color: #171717;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #f5c16c;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================
+   IMAGENS
+   ========================================== */
+
+img {
+    max-width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* ==========================================
+   CATÁLOGO DE DISCOS
+   ========================================== */
+
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-top: 25px;
+    align-items: stretch;
+}
+
+/* Cada disco cadastrado */
+.disco-card {
+    background-color: #262626;
+    padding: 22px;
+    border-radius: 12px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    min-width: 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.disco-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Capas dos álbuns */
+.disco-card img {
+    width: 220px;
+    height: 220px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Informações dos discos */
+.disco-card p {
+    margin: 12px 0;
+    overflow-wrap: anywhere;
+}
+
+.disco-card strong {
+    color: #ffffff;
+    font-size: 17px;
+}
+
+/* Links de edição */
+.disco-card a {
+    color: #e9a441;
+    font-weight: bold;
+}
+
+.disco-card a:hover {
+    color: #ffffff;
+}
+
+/* ==========================================
+   FORMULÁRIO DE EXCLUSÃO
+   ========================================== */
+
+/* Evita que o formulário de exclusão
+   ocupe uma linha inteira no card */
+
+.disco-card form {
+    display: inline-block;
+    background: transparent;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.disco-card form button {
+    background-color: #b75c49;
+    color: #ffffff;
+}
+
+.disco-card form button:hover {
+    background-color: #d16d59;
+}
+
+/* ==========================================
+   RESPONSIVIDADE - TABLETS
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .catalogo {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .disco-card {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+}
+
+/* ==========================================
+   RESPONSIVIDADE - CELULARES
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .catalogo {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .disco-card {
+        padding: 20px;
+    }
+
+    .disco-card img {
+        width: 200px;
+        height: 200px;
+    }
+
+    form {
+        padding: 18px;
+    }
+
+    input {
+        max-width: 100%;
+    }
+
+    button {
+        padding: 10px 16px;
+    }
+}

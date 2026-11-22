@@ -1,0 +1,25 @@
+# Banco de dados local
+*.sqlite
+*.sqlite3
+*.db
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+
+# Imagens enviadas pelos usuários
+/uploads/*
+
+# Manter a pasta uploads no Git
+!/uploads/.gitkeep
+
+# Configurações locais
+.env
+.env.*
+!.env.example
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Configurações do editor
+.vscode/
